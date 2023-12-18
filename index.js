@@ -15,8 +15,8 @@ import drawCycleVSpline from "./algorithms/drawCycleVSpline.js";
 import defineTwoPointMode from "./modes/defineTwoPointMode.js";
 import defineFourPointMode from "./modes/defineFourPointMode.js";
 import defineManyPointsMode from "./modes/defineManyPointMode.js";
-// import ThreeDObject from "./3d/ThreeDObject.js";
-// import drawPolygon from "./algorithms/drawPolygon.js";
+import ThreeDObject from "./3d/ThreeDObject.js";
+import drawPolygon from "./algorithms/drawPolygon.js";
 import checkDotPoly from "./algorithms/checkDotPoly.js";
 import defineOnePointMode from "./modes/defineOnePointMode.js";
 import checkSegmentPoly from "./algorithms/checkSegmentPoly.js";
@@ -74,15 +74,15 @@ btnCurves.addEventListener("click", function () {
   }
 });
 
-// const btnPoly = document.getElementById("polygon");
-// btnPoly.addEventListener("click", function () {
-//   const dropdownContent = document.getElementById("polyMenu");
-//   if (dropdownContent.style.display === "block") {
-//     dropdownContent.style.display = "none";
-//   } else {
-//     dropdownContent.style.display = "block";
-//   }
-// });
+const btnPoly = document.getElementById("polygon");
+btnPoly.addEventListener("click", function () {
+  const dropdownContent = document.getElementById("polyMenu");
+  if (dropdownContent.style.display === "block") {
+    dropdownContent.style.display = "none";
+  } else {
+    dropdownContent.style.display = "block";
+  }
+});
 
 const btnInter = document.getElementById("btnInter");
 btnInter.addEventListener("click", function () {
@@ -186,11 +186,11 @@ btnCycleVSpline.onclick = () => {
   closeDropdown("interMenu");
 };
 
-// const btnDrawPoly = document.getElementById("drawPoly");
-// btnDrawPoly.onclick = () => {
-//   setMode(drawPolygon, defineManyPointsMode);
-//   closeDropdown("polyMenu");
-// };
+const btnDrawPoly = document.getElementById("drawPoly");
+btnDrawPoly.onclick = () => {
+  setMode(drawPolygon, defineManyPointsMode);
+  closeDropdown("polyMenu");
+};
 
 const btnDotPoly = document.getElementById("dotPoly");
 btnDotPoly.onclick = () => {
@@ -235,18 +235,18 @@ nextBtn.onclick = () => {
   }
 };
 
-// document.getElementById("threeDMode").onclick = () => {
-//   const threeDDiv = document.querySelector(".threeDContent");
-//   if (threeDDiv.style.display === "flex") {
-//     threeDDiv.style.display = "none";
-//     ThreeD = null;
-//     window.ctx.beginPath();
-//     drawCanvas();
-//   } else {
-//     threeDDiv.style.display = "flex";
-//     ThreeD = new ThreeDObject();
-//   }
-// };
+document.getElementById("threeDMode").onclick = () => {
+  const threeDDiv = document.querySelector(".threeDContent");
+  if (threeDDiv.style.display === "flex") {
+    threeDDiv.style.display = "none";
+    ThreeD = null;
+    window.ctx.beginPath();
+    drawCanvas();
+  } else {
+    threeDDiv.style.display = "flex";
+    ThreeD = new ThreeDObject();
+  }
+};
 document.getElementById("btnMovement").onclick = () => {
   const movementDropdown = document.getElementById("movementDropdown");
   if (movementDropdown.style.display === "flex") {
@@ -254,7 +254,7 @@ document.getElementById("btnMovement").onclick = () => {
   } else {
     movementDropdown.style.display = "flex";
   }
-  // ThreeD.moveObject(100, 100, 100)
+  ThreeD.moveObject(100, 100, 100)
 };
 document.getElementById("commitMovement").onclick = () => {
   // тут десятка значит десятичное число, вау

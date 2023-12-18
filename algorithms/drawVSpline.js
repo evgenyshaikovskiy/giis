@@ -49,6 +49,7 @@ const drawVSpline = function (dots) {
       });
     }
   }
+  // console.log(points)
   return points;
 };
 
